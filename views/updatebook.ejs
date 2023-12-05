@@ -1,0 +1,100 @@
+<%- include('partials/header.ejs')%>
+<link rel="stylesheet" href="/stylesheets/registerbook.css">
+    <%- include('partials/nav.ejs')%>
+
+        <div class="form-container">
+            
+            <form action="/updatebook/<%= index%>" method="POST">
+
+                <h1>Update Your Book</h1>
+
+                <div class="input-box">
+                    <input 
+                        value="<%= book.author %>"
+                        type="text" 
+                        placeholder="Author" 
+                        name="author"
+                    >
+                </div>
+
+                <div class="input-box">
+                    <select name="country">
+                        <option value="">Select Country</option>
+                        <% countryNames.forEach(function(c) {%>
+    
+                            <option
+                                <%= book.country === c ? "selected" : ""%>
+                                value="<%= c%>"> <%= c%>
+                            </option>
+    
+                        <% })%>
+                    </select>
+                </div>
+                
+                <div class="input-box">
+                    <input 
+                        value="<%= book.imagelink%>"
+                        type="text" 
+                        placeholder="Image link" 
+                        name="imagelink"
+                    >
+                </div>
+
+                <div class="input-box">
+                    <select name="language">
+                        <option value="">Select Language</option>
+                        <% languageNames.forEach(function(l){ %>
+    
+                            <option 
+                            <%= book.language === l.name ? "selected" : ""%>
+                                value="<%= l.name%>"><%= l.name%>
+                            </option>
+    
+                        <% }) %>
+    
+                    </select>
+                </div>
+                
+                <div class="input-box">
+                    <input 
+                        value="<%= book.link%>" 
+                        type="text" 
+                        placeholder="Link" 
+                        name="link"
+                    >
+                </div>
+                
+                <div class="input-box">
+                    <input 
+                        value="<%= book.pages%>"   
+                        type="number" 
+                        placeholder="Pages" 
+                        name="pages"
+                    >
+                </div>
+
+                <div class="input-box">
+                    <input 
+                        value="<%= book.title%>" 
+                        type="text" 
+                        placeholder="Title" 
+                        name="title"
+                    >
+                </div>
+                
+                <div class="input-box">
+                    <input 
+                        value="<%= book.publication%>" 
+                        type="text" 
+                        placeholder="Year of publication" 
+                        name="publication"
+                    >
+                </div>
+                
+
+                <button class="btn">Update Book</button>
+            </form>
+        </div>
+
+
+        <%- include('partials/footer.ejs')%>

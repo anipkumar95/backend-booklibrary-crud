@@ -1,0 +1,90 @@
+.library-container {
+    
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    
+    flex-wrap: wrap;
+    padding-top: 10vmax;
+    padding-left: 7vmax;
+    overflow-y: auto;    
+}
+
+
+.book-card {
+    
+    position: relative;
+    width: 20vmax;
+    height: 31vmax;
+    margin-right: 2vmax;
+    margin-bottom: 2vmax;
+    border-radius: 25px;
+    background-color: transparent;
+    box-shadow: 0 0 10px rgb(215, 215, 215);
+    border: 2px solid rgba(18, 17, 17, 0.3);
+    backdrop-filter: blur(15px);
+    padding: 15px 15px;
+    z-index: 1;
+
+    text-align: center;
+    overflow: hidden;
+    font-family: gilroy;  
+    
+}
+
+.book-card img {
+    
+    width: 100%;
+    height: 70%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    object-fit: cover;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;  
+}
+
+.book-card>h3{
+    margin-top: 2px;
+    color: yellow;
+    text-shadow: 1px 2px 2px black;
+    text-transform: uppercase;
+    
+}
+
+.book-card>h5{
+    margin-top: 4px;
+    
+}
+
+.book-card>a{
+    margin-top: 4px;
+    color: blue;
+    font-weight: 900;
+}
+.book-card>a:hover{
+    color: red;
+}
+
+.btn1, .btn2{
+    padding: 4px 2vmax;
+    margin: 3px;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 1);
+    background-color: black;
+}
+
+.btn1>a, .btn2>a{
+    text-decoration: none;
+    font-size: 14px;
+    text-align: center;
+    color: whitesmoke;
+    font-family: gilroy;
+    font-weight: 600;
+}
+.btn1:hover, .btn2:hover{
+    background: linear-gradient( to left, red 50%, black 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition:  0.7s ;
+    cursor: pointer;
+}

@@ -1,0 +1,42 @@
+<%- include('partials/header.ejs')%>
+    <link rel="stylesheet" href="/stylesheets/booklibrary.css">
+    <%- include('partials/nav.ejs')%>
+
+        <div class="library-container">
+            
+
+                <% if (books.length===0) { %>
+    
+                    <h2 style="color: tomato; text-align: center">No Books Registered</h2>
+    
+                <% } %>
+    
+                <% books.forEach(function(book,idx){ %>
+                    <div class="book-card">
+                        
+                        <img src="<%= book.imagelink %>" alt="" />
+                        <br>
+
+                        <h3>
+                            <%= book.title%>
+                        </h3>
+
+                        <h5>
+                            <%= book.author%>
+                        </h5>
+                        
+                        <a target="_blank" href="<%= book.link%>">Explore</a>
+                        <br><br>
+
+                        <p>
+                            <button class="btn1"><a href="/updatebook/<%= idx%>">UPDATE</a></button>
+                            <button class="btn2"><a href="/delete/<%= idx%>">DELETE</a></button>
+                        </p>
+                    </div>
+                <% }) %>
+
+            </div>
+
+        </div>
+
+        <%- include('partials/footer.ejs')%>
